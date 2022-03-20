@@ -1,4 +1,5 @@
 <?php
+
 require 'controller/ClassroomController.php';
 
 if ( isset($_GET['action']) ) {
@@ -9,16 +10,26 @@ if ( isset($_GET['action']) ) {
 
 switch ($action) {
     case 'index':
-    case 'create':
-    case 'store':
-    case 'edit':
-    case 'update':
-    case 'delete':
-        (new ClassroomController())->$action();
+        (new ClassroomController())->index();
         break;
-
-
+    case 'create':
+        (new ClassroomController())->create();
+        break;
+    case 'store':
+        (new ClassroomController())->store();
+        break;
+    case 'edit':
+        (new ClassroomController())->edit();
+        break;
+    case 'update':
+        (new ClassroomController())->update();
+        break;
+    case 'delete':
+        (new ClassroomController())->delete();
+        break;
     default:
-        echo 'Nhập sai action rồi';
+        echo 'Nhập sai action';
+
+
 }
 

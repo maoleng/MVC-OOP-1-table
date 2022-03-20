@@ -13,15 +13,16 @@ class Connect {
     }
 
     public function select($sql) {
-        $connect = (new self())->cnt();
+        $connect = $this->cnt();
         $query = mysqli_query($connect, $sql);
         return $query;
     }
 
     public function execute($sql) {
-        $connect = (new self())->cnt();
+        $connect = $this->cnt();
         mysqli_query($connect, $sql);
     }
+
 
 
 }

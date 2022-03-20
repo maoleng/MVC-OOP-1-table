@@ -1,2 +1,2 @@
 <?php
-require './route.php';
+require 'route.php';

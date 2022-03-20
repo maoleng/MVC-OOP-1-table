@@ -1,43 +1,41 @@
 <?php
 
 class ClassroomController {
-    public function index() {
+    public function index() :void {
         require 'model/Classroom.php';
         $array = (new Classroom())->all();
         require 'view/classroom/index.php';
     }
 
-    public function create() {
+    public function create() :void {
         require 'view/classroom/create.php';
     }
-
-    public function store() {
-        $firstName = $_POST['firstName'];
-        $lastName = $_POST['lastName'];
+    public function store() :void {
         require 'model/Classroom.php';
-        (new Classroom())->create($firstName, $lastName);
+        // Truyền thằng cái array $_POST vào
+        (new Classroom())->create($_POST);
+        header('location:index.php');
     }
 
-    public function edit() {
+    public function edit() :void {
         $id = $_GET['id'];
         require 'model/Classroom.php';
-        $result = (new Classroom)->find($id);
+        $object = (new Classroom())->find($id);
         require 'view/classroom/edit.php';
     }
 
-    public function update() {
-        $id = $_POST['id'];
-        $firstName = $_POST['firstName'];
-        $lastName = $_POST['lastName'];
-
+    public function update() :void {
         require 'model/Classroom.php';
-        (new Classroom())->update($id, $firstName, $lastName);
+        (new Classroom())->update($_POST);
+        header('location:index.php');
     }
 
-    public function delete() {
+    public function delete() :void {
         $id = $_GET['id'];
         require 'model/Classroom.php';
-        (new Classroom())->destroy($id);
+        (new Classroom())->delete($id);
+        header('location:index.php');
     }
+
 
 }
