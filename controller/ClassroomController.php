@@ -14,7 +14,7 @@ class ClassroomController {
         require 'model/Classroom.php';
         // Truyền thằng cái array $_POST vào
         (new Classroom())->create($_POST);
-        header('location:index.php');
+        header('location:index.php?controller=class');
     }
 
     public function edit() :void {
@@ -27,14 +27,14 @@ class ClassroomController {
     public function update() :void {
         require 'model/Classroom.php';
         (new Classroom())->update($_POST);
-        header('location:index.php');
+        header('location:index.php?controller=class');
     }
 
     public function delete() :void {
         $id = $_GET['id'];
         require 'model/Classroom.php';
         (new Classroom())->delete($id);
-        header('location:index.php');
+        header('location:index.php?controller=class');
     }
 
 

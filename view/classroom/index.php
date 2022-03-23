@@ -1,4 +1,4 @@
-<a href="?action=create">Thêm học sinh</a>
+<a href="?action=create&controller=class">Thêm lớp</a>
 
 <table border="1px solid black">
     <tr>
@@ -16,10 +16,10 @@
         <td><?php echo $eachClassroom->getId() ?></td>
         <td><?php echo $eachClassroom->showFullName() ?></td>
         <td>
-            <a href="?action=edit&id=<?php echo $eachClassroom->getId() ?>">Sửa</a>
+            <a href="?action=edit&controller=class&id=<?php echo $eachClassroom->getId() ?>">Sửa</a>
         </td>
         <td>
-            <a href="?action=delete&id=<?php echo $eachClassroom->getId() ?>">Xóa</a>
+            <a href="?action=delete&controller=class&id=<?php echo $eachClassroom->getId() ?>">Xóa</a>
         </td>
     </tr>
     <?php } ?>
