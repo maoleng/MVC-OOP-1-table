@@ -1,4 +1,4 @@
-<h1>MVC OOP trên 1 bảng</h1>
+<h1>MVC OOP trên 2 bảng</h1>
 Route đảm nhận việc điều hướng, file index chỉ cần include route
 <br>
 Quy tắc đặt tên trong PHP: Viết hoa toàn bộ chữ cái đầu
